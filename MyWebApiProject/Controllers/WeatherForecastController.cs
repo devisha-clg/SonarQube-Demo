@@ -30,4 +30,10 @@ public class WeatherForecastController : ControllerBase
         })
         .ToArray();
     }
+
+    [HttpGet("status")]
+    public IActionResult GetStatus()
+    {
+        return Ok(new { status = "Service is running", timestamp = DateTime.UtcNow });
+    }
 }
