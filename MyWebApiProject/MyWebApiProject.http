@@ -1,6 +1,15 @@
 @MyWebApiProject_HostAddress = http://localhost:5086
 
+### Login to get JWT token
+POST {{MyWebApiProject_HostAddress}}/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "Password123!"
+}
+
+### Use copied token from login response
 GET {{MyWebApiProject_HostAddress}}/weatherforecast/
 Accept: application/json
-
-###
+Authorization: Bearer <paste-token-here>
